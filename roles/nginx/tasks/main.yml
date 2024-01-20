@@ -1,0 +1,13 @@
+---
+# tasks file for nginx
+- name: install nginx
+  apt:
+    name: nginx 
+    state: latest 
+
+- name: make sure nginx is running
+  systemd:
+    name: nginx
+    state: started
+    enabled: true
+
